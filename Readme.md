@@ -1,7 +1,7 @@
 # Личный проект «Кекстаграм»
 
 * Студент: [Вета Жёлтикова](https://up.htmlacademy.ru/javascript/30/user/2057771).
-* Наставник: `Неизвестно`.
+* Наставник: [Антон Попов](https://htmlacademy.ru/profile/joker).
 
 ---
 
