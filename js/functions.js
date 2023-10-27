@@ -4,10 +4,10 @@ function checkLength(inputString, maxLength) {
   return (inputString.length <= maxLength);
 }
 
-let stringToCheck = 'hello';
-let maxLength = 5;
+const stringToCheck = 'hello';
+const maxLength = 5;
 
-let result = checkLength(stringToCheck, maxLength);
+const result = checkLength(stringToCheck, maxLength);
 
 if (result) {
   console.log('Working!');
@@ -18,11 +18,11 @@ if (result) {
 // Функция для проверки, является ли строка палиндромом:
 
 function checkPalindrome(text) {
-  text = text.replaceAll(" ", "").toLowerCase();
+  text = text.replaceAll(' ', '').toLowerCase();
   const reversedText = text.split('').reverse().join('');
   return text === reversedText;
 }
 
-console.log(checkPalindrome("А роза упала на лапу Азора")); // true
-console.log(checkPalindrome("Лёша на полке клопа нашёл ")); // true
-console.log(checkPalindrome("Привет, мир!")); // false
+console.log(checkPalindrome('А роза упала на лапу Азора')); // true
+console.log(checkPalindrome('Лёша на полке клопа нашёл')); // true
+console.log(checkPalindrome('Привет, мир!')); // false
