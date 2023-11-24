@@ -73,7 +73,7 @@ const getRandomInteger = (a, b) => {
   return Math.floor(result);
 };
 //функция, которая создаёт нужный объект
-const createPost = () => ({
+const createPost = () => {
   const randomUserId = getRandomInteger(1, 25);//не должны повторяться
   const randomUrl = getRandomInteger(1, 25);//не должны повторяться
   const randomDescriptionIndex = getRandomInteger(0, DESCRIPTIONS.length - 1);
@@ -93,7 +93,7 @@ const createPost = () => ({
     message: MESSAGES[randomMessageIndex];
     name: NAMES[randomNameIndex];
   }
-});
+};
 
 console.log(
   createPost()
