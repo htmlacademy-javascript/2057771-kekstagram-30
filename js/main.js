@@ -73,29 +73,27 @@ const getRandomInteger = (a, b) => {
   return Math.floor(result);
 };
 //функция, которая создаёт нужный объект
-const createPost = () => {
-  const randomUserId = getRandomInteger(1, 25); // Это число от 1 до 25. Идентификаторы не должны повторяться.
-  const randomUrl = getRandomInteger(1, 25);
-  //url, строка — адрес картинки вида photos/{{i}}.jpg, где {{i}} — это число от 1 до 25. Адреса картинок не должны повторяться.
+const createPost = () => ({
+  const randomUserId = getRandomInteger(1, 25);//не должны повторяться
+  const randomUrl = getRandomInteger(1, 25);//не должны повторяться
   const randomDescriptionIndex = getRandomInteger(0, DESCRIPTIONS.length - 1);
-  const randomLikes = getRandomInteger(1, 25);
-  //вряд ли это должно быть тут const comments = [commentId, avatar, message, name];
-  const randomCommentId = getRandomInteger(1, 1000);
+  const randomLikes = getRandomInteger(15, 200);
+  const randomCommentId = getRandomInteger(0, 30);//не должны повторяться + как это число соотносится с тем, сколько комментарие действительно будет под постом?
   const randomAvatar = getRandomInteger(1, 6);
-  const randomMessageIndex = getRandomInteger(0, MESSAGES.length - 1);
+  const randomMessageIndex = getRandomInteger(0, MESSAGES.length - 1);//одно или ДВА предложения?
   const randomNameIndex = getRandomInteger(0, NAMES.length - 1);
 
   return {
     userId: randomUserId;
     url: 'photos/' + randomUrl + '.jpg';
-    description: randomDescription;
-    likes: ;
+    description: DESCRIPTIONS[randomDescriptionIndex];
+    likes: randomLikes;
     сommentId: randomCommentId;
     avatar: 'img/avatar-' + randomAvatar + '.svg';
-    message: ;
-    name: randomName;
+    message: MESSAGES[randomMessageIndex];
+    name: NAMES[randomNameIndex];
   }
-};
+});
 
 console.log(
   createPost()
