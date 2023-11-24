@@ -11,6 +11,7 @@
   } вот, как должен выглядеть сгенерированный объект. всего их должно быть 25
   Каждый объект массива — описание фотографии, опубликованной пользователем?
 } */
+const postsCount = 25;
 
 const getRandomInteger = (a, b) => {
   const lower = Math.ceil(Math.min(a, b));
@@ -56,9 +57,13 @@ const createPost = () => {
     randomMessage: ;
     randomName: ;
   }
-}
+};
 
 console.log(
   createPost()
 );
+
+const posts = Array.from({length: postsCount}, createPost);
+
+console.log(posts);
 
