@@ -1,17 +1,3 @@
-/* const = {
-  id: ,
-  url: ,
-  description: ,
-  likes: ,
-  comments: {
-    commentId: ,
-    avatar: '',
-    message: '',
-    name: '',
-  } вот, как должен выглядеть сгенерированный объект. всего их должно быть 25
-  Каждый объект массива — описание фотографии, опубликованной пользователем?
-} */
-
 const DESCRIPTIONS = [
   'Пляж',
   'Указатель',
@@ -77,36 +63,37 @@ const NAMES = [
   'Али',
 ];
 
-const postsCount = 25;
+const POSTS_COUNT = 25;
 
+//функция по получению случайного числа из диапазона
 const getRandomInteger = (a, b) => {
   const lower = Math.ceil(Math.min(a, b));
   const upper = Math.floor(Math.max(a, b));
   const result = Math.random() * (upper - lower + 1) + lower;
   return Math.floor(result);
 };
-
+//функция, которая создаёт нужный объект
 const createPost = () => {
   const randomUserId = getRandomInteger(1, 25); // Это число от 1 до 25. Идентификаторы не должны повторяться.
-  const randomUrl = 'photos/' + getRandomInteger(1, 25) + '.jpg';
+  const randomUrl = getRandomInteger(1, 25);
   //url, строка — адрес картинки вида photos/{{i}}.jpg, где {{i}} — это число от 1 до 25. Адреса картинок не должны повторяться.
-  const description = 'Тут может быть просто повторяющийся текст?';
+  const randomDescriptionIndex = getRandomInteger(0, DESCRIPTIONS.length - 1);
   const randomLikes = getRandomInteger(1, 25);
   //вряд ли это должно быть тут const comments = [commentId, avatar, message, name];
-  const randomCommentId = getRandomInteger(1, 50); //ЛЮБОЕ число
-  const randomAvatar = 'img/avatar-' + getRandomInteger(1, 6) + '.svg';
-  const randomMessage = getRandomSentences(text, 2);
-  const randomName = getRandomInteger(0, NAMES.length - 1);
+  const randomCommentId = getRandomInteger(1, 1000);
+  const randomAvatar = getRandomInteger(1, 6);
+  const randomMessageIndex = getRandomInteger(0, MESSAGES.length - 1);
+  const randomNameIndex = getRandomInteger(0, NAMES.length - 1);
 
   return {
-    userId: ;
-    url: ;
-    description: ;
-    randomLikes: ;
-    randomCommentId: ;
-    randomAvatar: ;
-    randomMessage: ;
-    randomName: ;
+    userId: randomUserId;
+    url: 'photos/' + randomUrl + '.jpg';
+    description: randomDescription;
+    likes: ;
+    сommentId: randomCommentId;
+    avatar: 'img/avatar-' + randomAvatar + '.svg';
+    message: ;
+    name: randomName;
   }
 };
 
@@ -114,7 +101,7 @@ console.log(
   createPost()
 );
 
-const posts = Array.from({length: postsCount}, createPost);
+const posts = Array.from({length: POSTS_COUNT}, createPost);
 
 console.log(posts);
 
